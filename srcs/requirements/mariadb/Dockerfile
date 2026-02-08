@@ -17,7 +17,6 @@
 #COPY	tools/setup.sh /bin/
 #RUN		chmod +x /bin/setup.sh
 
-#CMD		["setup.sh", "mysqld_safe"]
 
 
 
@@ -39,3 +38,6 @@ RUN chmod +x /usr/local/bin/setup.sh \
 ENTRYPOINT ["/usr/local/bin/setup.sh"]
 
 CMD ["mysqld"]
+
+# This doesn't override
+#CMD		["setup.sh", "mysqld_safe"]
