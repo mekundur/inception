@@ -1,12 +1,8 @@
-version: "3.8"
-
 services:
   mariadb:
     container_name: mariadb
     image: mariadb
-    build:
-      context: requirements/mariadb
-      dockerfile: Dockerfile
+    build: requirements/mariadb
     env_file:
       - .env
     volumes:
@@ -15,16 +11,51 @@ services:
       - inception
     restart: always
 
+  wordpress:
+    container_name: wordpress
+    image: wordpress
+    build: requirements/wordpress
+    # ports:
+      # - 8080:80
+    env_file:
+      - .env
+    volumes:
+      - wordpress_data:/var/www/html
+    depends_on:
+      - mariadb
+    networks:
+      - inception
+    restart: always
+
 volumes:
   mariadb_data:
     name: mariadb_data
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/mekundur/data/mariadb
+
+  wordpress_data:
+    name: wordpress_data
 
 networks:
   inception:
     name: inception
     driver: bridge
+
+
+# Following implentation is using bind-mounts 
+# by wrapping it custom named volumes
+#
+# volumes:
+#   mariadb_data:
+#     name: mariadb
+#     driver: local
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: /home/mekundur/data/mariadb
+
+#   wordpress_data:
+#     name: wordpress
+#     driver: local
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: /home/mekundur/data/wordpress

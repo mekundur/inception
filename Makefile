@@ -1,38 +1,59 @@
-NAME = inception
-
 COMPOSE = docker compose
 COMPOSE_FILE = srcs/docker-compose.yml
 
+ENV_SRC = /home/mekundur/.env
+ENV_DST = srcs/.env
+
+DATA_DIR = /home/mekundur/data
+DB_DIR = $(DATA_DIR)/mariadb
+WP_DIR = $(DATA_DIR)/wordpress
+
 all: up
 
-dirs:
-	mkdir -p /home/mekundur/data/mariadb
-	mkdir -p /home/mekundur/data/wordpress
+$(ENV_DST): $(ENV_SRC)
+	cp $(ENV_SRC) $(ENV_DST)
 
-up: dirs
-	docker compose -f srcs/docker-compose.yml up -d --build
+$(DB_DIR):
+	mkdir -p $(DB_DIR)
+
+$(WP_DIR):
+	mkdir -p $(WP_DIR)
+
+dirs: $(DB_DIR) $(WP_DIR)
+
+up: $(ENV_DST) dirs
+	$(COMPOSE) -f $(COMPOSE_FILE) up --build --detach
 
 down:
-	docker compose -f $(COMPOSE_FILE) down
+	$(COMPOSE) -f $(COMPOSE_FILE) down
 
-re: dirs
-	docker compose -f $(COMPOSE_FILE) down
-	docker compose -f $(COMPOSE_FILE) up -d --build
+re:
+	$(COMPOSE) -f $(COMPOSE_FILE) down
+	$(COMPOSE) -f $(COMPOSE_FILE) up --build --detach
 
 stop:
-	docker compose -f $(COMPOSE_FILE) stop
+	$(COMPOSE) -f $(COMPOSE_FILE) stop
 
 start:
-	docker compose -f $(COMPOSE_FILE) start
+	$(COMPOSE) -f $(COMPOSE_FILE) start
+
+show:
+	@docker images
+	@echo "\n"
+	@docker ps
+	@echo "\n"
+	@docker volume ls
+	@echo "\n"
+	@docker network ls
 
 logs:
-	docker compose -f $(COMPOSE_FILE) logs -f
+	$(COMPOSE) -f $(COMPOSE_FILE) logs
 
 ps:
-	docker compose -f $(COMPOSE_FILE) ps
+	$(COMPOSE) -f $(COMPOSE_FILE) ps
 
 clean:
-	docker compose -f $(COMPOSE_FILE) down
-	docker compose -f $(COMPOSE_FILE) --rmi all --volumes --remove-orphans
+	$(COMPOSE) -f $(COMPOSE_FILE) down --rmi all --volumes --remove-orphans
+	rm -f srcs/.env
 
-.PHONY: all up down re stop start logs ps clean
+.PHONY: all dirs up down re stop start show logs ps clean 
