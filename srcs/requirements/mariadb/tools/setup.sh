@@ -6,6 +6,8 @@
 # In this case: "mysqld" that restart the mariadb service
 
 # set -ex # print commands & exit on error (debug mode)
+    
+echo "Configuring WordPress..."
 
 service mariadb start
 

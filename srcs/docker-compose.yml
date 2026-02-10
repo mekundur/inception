@@ -27,6 +27,23 @@ services:
       - inception
     restart: always
 
+  nginx:
+    container_name: nginx
+    image: nginx
+    build: requirements/nginx
+    ports:
+      - "443:443"
+    env_file:
+      - .env
+    volumes:
+      - wordpress_data:/var/www/html
+    depends_on:
+      - wordpress
+    networks:
+      - inception      
+    restart: always
+
+
 volumes:
   mariadb_data:
     name: mariadb_data
