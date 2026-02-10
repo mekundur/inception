@@ -10,7 +10,7 @@ The project focuses on service isolation, networking, data persistence using Doc
 
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
+    git clone git@github.com:mekundur/inception.git
     ```
 2. Build and start the infrastructure:
     ```bash
@@ -31,10 +31,15 @@ The project focuses on service isolation, networking, data persistence using Doc
 ## Resources
 
 Docker documentation: https://docs.docker.com/
+
 Docker Compose documentation: https://docs.docker.com/compose/
+
 NGINX documentation: https://nginx.org/en/docs/
+
 WordPress documentation: https://wordpress.org/documentation/
+
 MariaDB documentation: https://mariadb.com/kb/en/documentation/
+
 
 Use of AI:
 Copilot GPT-5 and ChatGPT was used as a learning aid to better understand Docker concepts (containers, volumes, networks), to clarify infrastructure design choices, and to help reason about the project requirements.
