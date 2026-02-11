@@ -6,8 +6,6 @@ This project is an introduction to containerization using Docker and Docker Comp
 It consists of setting up a small infrastructure of LEMP stack composed of multiple services: NGINX with TLS, WordPress with php-fpm, and MariaDB, all running in separate containers and connected through a Docker network.  
 The project focuses on service isolation, networking, data persistence using Docker volumes, and basic security practices.
 
-## Project Design and Technical Choices
-
 ### Use of Docker
 
 Docker is used to containerize each service (NGINX, WordPress with php-fpm, and MariaDB) so that they run in isolated environments with their own dependencies.  
