@@ -15,8 +15,6 @@ services:
     container_name: wordpress
     image: wordpress
     build: requirements/wordpress
-    # ports:
-      # - 8080:80
     env_file:
       - .env
     volumes:

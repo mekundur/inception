@@ -1,8 +1,6 @@
 #!/bin/bash
 # set -e
 
-SSL_DIR=/etc/nginx/ssl
-
 mkdir -p $SSL_DIR
 
 if [ ! -f $SSL_DIR/nginx.key ]; then

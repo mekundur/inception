@@ -17,6 +17,7 @@ if [ ! -f wp-config.php ]; then
     sed -i "s/username_here/$DB_USER/" wp-config.php
     sed -i "s/password_here/$DB_PASSWORD/" wp-config.php
     sed -i "s/localhost/mariadb/" wp-config.php
+    # sed -i "s/localhost/${DB_HOST}:${DB_PORT}/" wp-config.php
 fi
 
 # Install WP-CLI if not present
@@ -26,23 +27,33 @@ if ! command -v wp &> /dev/null; then
     mv wp-cli.phar /usr/local/bin/wp
 fi
 
+# Wait for MariaDB to be ready
+until mysqladmin ping -h"${DB_HOST}" -P"${DB_PORT}" --silent; do
+    echo "Waiting for MariaDB..."
+    sleep 10
+done
+
 # Run WordPress installation if DB is empty
+# if [ -z "$(wp option get siteurl --allow-root)" ]; then
 if ! wp core is-installed --allow-root; then
     wp core install \
       --url="https://$DOMAIN_NAME" \
-      --title="Welcome mekundur's inception :)" \
-      --admin_user="mekundur" \
-      --admin_email="mekundur@student.42berlin.de" \
-      --admin_password="1989" \
+      --title=$WP_TITLE \
+      --admin_user=$WP_ADMIN \
+      --admin_email=$WP_ADMIN_EMAIL \
+      --admin_password=$WP_ADMIN_PASS \
       --skip-email \
       --allow-root
 
     # Create a regular user
-    wp user create student student@student.42berlin.de \
+    wp user create $WP_USER $WP_USER_EMAIL \
       --role=author \
-      --user_pass=student \
+      --user_pass=$WP_USER_PASS \
       --allow-root
 fi
 
+# Update site URL and home to include custom port
+# wp option update siteurl "https://$DOMAIN_NAME:$NGINX_PORT" --allow-root
+# wp option update home "https://$DOMAIN_NAME:$NGINX_PORT" --allow-root
 
 exec "$@"

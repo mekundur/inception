@@ -28,7 +28,7 @@ down:
 	$(COMPOSE) -f $(COMPOSE_FILE) down
 
 re:
-	$(COMPOSE) -f $(COMPOSE_FILE) down
+	$(COMPOSE) -f $(COMPOSE_FILE) down --rmi all
 	$(COMPOSE) -f $(COMPOSE_FILE) up --build --detach
 
 stop:

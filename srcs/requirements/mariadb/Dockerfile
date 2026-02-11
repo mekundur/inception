@@ -13,6 +13,7 @@ RUN chmod +x /usr/local/bin/setup.sh \
     && mkdir -p /var/log/mysql \
     && mkdir -p /run/mysqld \
     && chown -R mysql:mysql /run/mysqld \
+    && chown -R mysql:mysql /var/log/mysql \
     && chown -R mysql:mysql /var/lib/mysql
 
 ENTRYPOINT ["/usr/local/bin/setup.sh"]
