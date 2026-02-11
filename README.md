@@ -93,15 +93,21 @@ Docker documentation: https://docs.docker.com/
 
 Docker Compose documentation: https://docs.docker.com/compose/
 
-NGINX documentation: https://nginx.org/en/docs/
+Doker Configuration: https://www.hostinger.com/tutorials/docker-tutorial
 
-WordPress documentation: https://wordpress.org/documentation/
+Doker Configuration: https://www.hostinger.com/tutorials/how-to-create-docker-container
+
+Doker Configuration: https://devopscube.com/what-is-docker/
+
+Doker Configuration: https://devopscube.com/build-docker-image/
 
 MariaDB documentation: https://mariadb.com/kb/en/documentation/
 
 MariaDB Configuration: https://exampleconfig.com/default/mariadb/etc-mysql-mariadb-conf-d-50-server-cnf
 
 MariaDB Configuration: https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files
+
+WordPress documentation: https://wordpress.org/documentation/
 
 Worpress Configuration: https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post
 
@@ -111,13 +117,13 @@ Worpress Configuration: https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wo
 
 Worpress Configuration: https://www.ionos.com/digitalguide/server/know-how/wordpress-in-docker-containers/
 
+nginx documentation: https://nginx.org/en/docs/
+
 nginx configuration: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose
 
 nginx configuration: https://ubuntu.com/tutorials/install-and-configure-nginx#1-overview
 
 nginx configuration: https://www.ibm.com/docs/en/i/7.6.0?topic=functionality-cgi
-
-nginx configuration: https://nginx.org/
 
 nginx configuration: https://www.cloudflare.com/learning/ssl/how-does-ssl-work/?utm_source=copilot.com
 
