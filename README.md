@@ -3,7 +3,7 @@
 ## Description
 
 This project is an introduction to containerization using Docker and Docker Compose.  
-It consists of setting up a small infrastructure composed of multiple services: NGINX with TLS, WordPress with php-fpm, and MariaDB, all running in separate containers and connected through a Docker network.  
+It consists of setting up a small infrastructure of LEMP stack composed of multiple services: NGINX with TLS, WordPress with php-fpm, and MariaDB, all running in separate containers and connected through a Docker network.  
 The project focuses on service isolation, networking, data persistence using Docker volumes, and basic security practices.
 
 ## Instructions
