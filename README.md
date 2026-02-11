@@ -99,6 +99,29 @@ WordPress documentation: https://wordpress.org/documentation/
 
 MariaDB documentation: https://mariadb.com/kb/en/documentation/
 
+MariaDB Configuration: https://exampleconfig.com/default/mariadb/etc-mysql-mariadb-conf-d-50-server-cnf
+
+MariaDB Configuration: https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files
+
+Worpress Configuration: https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post
+
+Worpress Configuration: https://www.hostinger.com/tutorials/what-is-wordpress?utm_campaign=Generic-Tutorials-DSA-t1%7CNT:Se%7CLang:EN%7CLO:DE&utm_medium=ppc&gad_source=1&gad_campaignid=16184995375&gbraid=0AAAAADMy-haIwCSNJjOF2VBwtyFi933HE&gclid=Cj0KCQiAhaHMBhD2ARIsAPAU_D7ZDCh-ZQivzVWLVjCbY_Fr8R4DQFDJEx7cFXcqV9yEQS0Yvl0CBPoaAnGyEALw_wcB
+
+Worpress Configuration: https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
+
+Worpress Configuration: https://www.ionos.com/digitalguide/server/know-how/wordpress-in-docker-containers/
+
+nginx configuration: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose
+
+nginx configuration: https://ubuntu.com/tutorials/install-and-configure-nginx#1-overview
+
+nginx configuration: https://www.ibm.com/docs/en/i/7.6.0?topic=functionality-cgi
+
+nginx configuration: https://nginx.org/
+
+nginx configuration: https://www.cloudflare.com/learning/ssl/how-does-ssl-work/?utm_source=copilot.com
+
+nginx configuration: https://www.digicert.com/what-is-ssl-tls-and-https?utm_source=copilot.com
 
 Use of AI:
-Copilot GPT-5 and ChatGPT was used as a learning aid to better understand Docker concepts (containers, volumes, networks), to clarify infrastructure design choices, and to help reason about the project requirements.
+Copilot GPT-5 and ChatGPT was used as a learning aid to better understand Docker concepts (containers, volumes, networks), to clarify infrastructure design choices, and to help reason about the project requirements, and to help on better understanding of realted concepts.
