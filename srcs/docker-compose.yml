@@ -59,7 +59,7 @@ networks:
 
 # Following implentation is using bind-mounts 
 # by wrapping it custom named volumes
-#
+
 # volumes:
 #   mariadb_data:
 #     name: mariadb

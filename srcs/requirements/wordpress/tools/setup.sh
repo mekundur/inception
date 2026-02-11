@@ -27,18 +27,18 @@ if ! command -v wp &> /dev/null; then
 fi
 
 # Run WordPress installation if DB is empty
-if ! wp core is-installed --allow-root; ttrhen
+if ! wp core is-installed --allow-root; then
     wp core install \
       --url="https://$DOMAIN_NAME" \
-      --title="My WordPress Site" \
-      --admin_user="admin" \
-      --admin_password="admin_password" \
-      --admin_email="admin@example.com" \
+      --title="Welcome mekundur's inception :)" \
+      --admin_user="mekundur" \
+      --admin_password="1989" \
+      --admin_email="mekundur@student.42berlin.de" \
       --skip-email \
       --allow-root
 
     # Create a regular user
-    wp user create wp_user wp_user@example.com \
+    wp user create student student@student.42berlin.de \
       --role=author \
       --user_pass=wp_password \
       --allow-root
